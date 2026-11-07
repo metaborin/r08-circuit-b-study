@@ -6,7 +6,7 @@ window.RESOURCES = [
     "category": "capacitor",
     "type": "video",
     "duration": "4分31秒",
-    "file": "assets/capacitor-basics.mp4",
+    "file": "assets/capacitor-basics.mp4?v=20261107-startfix1",
     "thumb": "assets/capacitor-review.jpg",
     "tags": [
       "基礎復習",
@@ -75,7 +75,7 @@ window.RESOURCES = [
     "category": "capacitor",
     "type": "video",
     "duration": "13分00秒",
-    "file": "assets/video-capacitor-review.mp4",
+    "file": "assets/video-capacitor-review.mp4?v=20261107-startfix1",
     "thumb": "assets/video-capacitor-review.jpg",
     "lessons": [
       "parallel",
@@ -121,7 +121,7 @@ window.RESOURCES = [
     "category": "magnetic",
     "type": "video",
     "duration": "23分07秒",
-    "file": "assets/video-magnets.mp4",
+    "file": "assets/video-magnets.mp4?v=20261107-startfix1",
     "thumb": "assets/video-magnets.jpg",
     "lessons": [
       "poles"
@@ -163,7 +163,7 @@ window.RESOURCES = [
     "category": "magnetic",
     "type": "video",
     "duration": "15分05秒",
-    "file": "assets/video-field.mp4",
+    "file": "assets/video-field.mp4?v=20261107-startfix1",
     "thumb": "assets/video-field.jpg",
     "lessons": [
       "direction",
@@ -184,7 +184,7 @@ window.RESOURCES = [
     "category": "magnetic",
     "type": "video",
     "duration": "28分09秒",
-    "file": "assets/video-field-voicevox.mp4",
+    "file": "assets/video-field-voicevox.mp4?v=20261107-startfix1",
     "thumb": "assets/video-field-voicevox.jpg",
     "lessons": [
       "direction",
@@ -248,7 +248,7 @@ window.RESOURCES = [
     "category": "magnetic",
     "type": "video",
     "duration": "8分48秒",
-    "file": "assets/video-biot-savart.mp4",
+    "file": "assets/video-biot-savart.mp4?v=20261107-startfix1",
     "thumb": "assets/video-biot-savart.jpg",
     "lessons": [
       "current-field"
@@ -312,7 +312,7 @@ window.RESOURCES = [
     "category": "magnetic",
     "type": "video",
     "duration": "8分31秒",
-    "file": "assets/video-ampere.mp4",
+    "file": "assets/video-ampere.mp4?v=20261107-startfix1",
     "thumb": "assets/video-ampere.jpg",
     "lessons": [
       "current-field"
@@ -376,7 +376,7 @@ window.RESOURCES = [
     "category": "magnetic",
     "type": "video",
     "duration": "15分26秒",
-    "file": "assets/video-solenoid.mp4",
+    "file": "assets/video-solenoid.mp4?v=20261107-startfix1",
     "thumb": "assets/video-solenoid.jpg",
     "lessons": [
       "current-field"
@@ -439,7 +439,7 @@ window.RESOURCES = [
     "category": "magnetic",
     "type": "video",
     "duration": "8分28秒",
-    "file": "assets/video-toroid.mp4",
+    "file": "assets/video-toroid.mp4?v=20261107-startfix1",
     "thumb": "assets/video-toroid.jpg",
     "lessons": [
       "current-field"
@@ -526,7 +526,7 @@ window.RESOURCES = [
     "category": "magnetic",
     "type": "video",
     "duration": "8分57秒",
-    "file": "assets/video-magnetic-review.mp4",
+    "file": "assets/video-magnetic-review.mp4?v=20261107-startfix1",
     "thumb": "assets/video-magnetic-review.jpg",
     "lessons": [
       "poles",
@@ -549,7 +549,7 @@ window.RESOURCES = [
     "category": "magnetic",
     "type": "video",
     "duration": "19分55秒",
-    "file": "assets/video-magnetic-review-background.mp4",
+    "file": "assets/video-magnetic-review-background.mp4?v=20261107-startfix1",
     "thumb": "assets/video-magnetic-review-background.jpg",
     "lessons": [
       "poles",
