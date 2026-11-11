@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" role="img" aria-labelledby="title desc">
+  <title id="title">コンデンサの極板間の電界に蓄えられるエネルギー</title>
+  <desc id="desc">左の極板にプラスQ、右の極板にマイナスQの電荷がある。電界Eは正の極板から負の極板へ向かう。静電容量C、極板間電圧Vのコンデンサに蓄えられるエネルギーWは2分の1CVの2乗。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1L9 5L0 9Z" fill="#bd6b20"/></marker></defs>
+  <style>svg{font-size:18px;fill:#173f39}text{font-family:"Yu Gothic","Meiryo",sans-serif}.title{font-size:23px;font-weight:700}.note{fill:#52736c}.formula{font-size:23px;font-weight:700}.positive{fill:#bd6b20}.negative{fill:#2563a6}</style>
+  <rect width="480" height="280" rx="16" fill="#f5faf8"/>
+  <text x="24" y="32" class="title">コンデンサにたまるエネルギー</text>
+  <text x="24" y="60" class="note">極板の間の電界にエネルギーを蓄える</text>
+  <rect x="135" y="99" width="180" height="96" fill="#fff1df"/>
+  <path d="M135 99V195M315 99V195" stroke="#12685a" stroke-width="6" stroke-linecap="round"/>
+  <text x="111" y="91" text-anchor="middle" class="positive" font-size="21">+Q</text><text x="340" y="91" text-anchor="middle" class="negative" font-size="21">−Q</text>
+  <g class="positive" text-anchor="middle" font-weight="700"><text x="111" y="120">+</text><text x="111" y="154">+</text><text x="111" y="188">+</text></g>
+  <g class="negative" text-anchor="middle" font-weight="700"><text x="340" y="120">−</text><text x="340" y="154">−</text><text x="340" y="188">−</text></g>
+  <g fill="none" stroke="#bd6b20" stroke-width="2.5" marker-end="url(#arrow)"><path d="M161 113H287"/><path d="M161 147H287"/><path d="M161 181H287"/></g>
+  <text x="225" y="92" text-anchor="middle" class="positive" font-size="20">電界 E</text>
+  <path d="M135 206V215H315V206" fill="none" stroke="#12685a" stroke-width="2"/>
+  <text x="225" y="237" text-anchor="middle">電圧 V</text>
+  <text x="240" y="265" text-anchor="middle" class="formula">W = ½CV² = ½QV = Q²/(2C)</text>
+</svg>

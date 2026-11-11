@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" role="img" aria-labelledby="title desc">
+  <title id="title">環状コイルの内部磁界と平均半径</title>
+  <desc id="desc">環状コイルを上から見た模式図。緑の環状領域に巻線を示し、その内部を青い磁力線が円形に一周する。rは環全体の中心から磁界を考える位置までの距離で、ここでは平均半径を示す。理想的な一様巻きの環状コイルではHイコールNI割る2πr、Nは全巻数。磁界の回転方向は巻線電流の向きで決まる。</desc>
+  <defs><marker id="field" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1L9 5L0 9Z" fill="#2563a6"/></marker><path id="winding" d="M147 68V106" fill="none" stroke="#12685a" stroke-width="2.4"/></defs>
+  <style>svg{font-size:18px;fill:#173f39}text{font-family:"Yu Gothic","Meiryo",sans-serif}.title{font-size:23px;font-weight:700}.note{fill:#52736c}.formula{font-size:22px;font-weight:700}</style>
+  <rect width="480" height="280" rx="16" fill="#f3f8fc"/>
+  <text x="24" y="32" class="title">環状コイル：磁界は内部を一周</text>
+  <text x="24" y="60" class="note">平均半径 r の位置で考える</text>
+  <circle cx="147" cy="149" r="62" fill="none" stroke="#e0f0e8" stroke-width="38"/>
+  <g fill="none" stroke="#12685a" stroke-width="1.5"><circle cx="147" cy="149" r="81"/><circle cx="147" cy="149" r="43"/></g>
+  <g><use href="#winding"/><use href="#winding" transform="rotate(18 147 149)"/><use href="#winding" transform="rotate(36 147 149)"/><use href="#winding" transform="rotate(54 147 149)"/><use href="#winding" transform="rotate(72 147 149)"/><use href="#winding" transform="rotate(90 147 149)"/><use href="#winding" transform="rotate(108 147 149)"/><use href="#winding" transform="rotate(126 147 149)"/><use href="#winding" transform="rotate(144 147 149)"/><use href="#winding" transform="rotate(162 147 149)"/><use href="#winding" transform="rotate(180 147 149)"/><use href="#winding" transform="rotate(198 147 149)"/><use href="#winding" transform="rotate(216 147 149)"/><use href="#winding" transform="rotate(234 147 149)"/><use href="#winding" transform="rotate(252 147 149)"/><use href="#winding" transform="rotate(270 147 149)"/><use href="#winding" transform="rotate(288 147 149)"/><use href="#winding" transform="rotate(306 147 149)"/><use href="#winding" transform="rotate(324 147 149)"/><use href="#winding" transform="rotate(342 147 149)"/></g>
+  <g fill="none" stroke="#2563a6" stroke-width="3"><circle cx="147" cy="149" r="62"/><path d="M157 87H137" marker-end="url(#field)"/><path d="M137 211H157" marker-end="url(#field)"/></g>
+  <path d="M147 149H209" fill="none" stroke="#12685a" stroke-width="1.8" stroke-dasharray="4 3"/>
+  <circle cx="147" cy="149" r="3" fill="#12685a"/>
+  <text x="172" y="139" font-size="22">r</text>
+  <text x="263" y="111" fill="#2563a6">内部の磁界 H</text><text x="263" y="149" class="formula">H = NI / (2πr)</text>
+  <text x="263" y="188" class="note">N：全体の巻数</text><text x="263" y="219" class="note">r：平均半径</text>
+  <text x="240" y="262" text-anchor="middle" class="note">H の向きは巻線電流の向きで決まる</text>
+</svg>

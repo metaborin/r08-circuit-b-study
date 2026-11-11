@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#12685a">
-  <meta name="description" content="電気回路Bの2学期期末テストに向けて、コンデンサと電流・磁界を学ぶ学習室。解説、授業スライド、動画、確認問題で自分のペースで復習できます。">
+  <meta name="description" content="電気回路Bの2学期期末テストに向けて、コンデンサと電流・磁界を学ぶ学習室。テスト範囲・指定問題を確認し、授業の動画・スライドと回路・磁界の図で復習できます。">
   <title>電気回路B | 2学期期末 学習室</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css?v=20261107-clickplay1">
-  <script src="lessons.js?v=20261106-materials1" defer></script><script src="resources.js?v=20261107-startfix1" defer></script><script src="app.js?v=20261107-clickplay1" defer></script>
+  <link rel="stylesheet" href="visual.css?v=20261111-study1">
+  <script src="lessons.js?v=20261106-materials1" defer></script><script src="resources.js?v=20261107-startfix1" defer></script><script src="app.js?v=20261111-study1" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -15,21 +16,22 @@
   <a class="brand" href="#home" aria-label="電気回路B 学習室 ホーム"><span class="brand-symbol">∥</span><span>電気回路B<small>LEARNING ROOM</small></span></a>
   <div class="course-label">令和8年度 · 高校1年</div>
   <nav aria-label="メインメニュー">
-    <a href="#home" data-nav="home"><span>⌂</span>学習ホーム</a>
-    <a href="#scope" data-nav="scope"><span>▦</span>テスト範囲</a>
-    <a href="#units" data-nav="units"><span>▤</span>単元から学ぶ</a>
-    <a href="#resources" data-nav="resources"><span>▱</span>スライド・動画</a>
-    <a href="#practice" data-nav="practice"><span>✓</span>確認問題</a>
-    <a href="#formulas" data-nav="formulas"><span>ƒ</span>公式ノート</a>
-    <a href="#lab" data-nav="lab"><span>◉</span>ためして理解</a>
+    <a class="nav-primary" href="#home" data-nav="home"><span aria-hidden="true">⌂</span>学習ホーム</a>
+    <a class="nav-primary" href="#scope" data-nav="scope"><span aria-hidden="true">▦</span>テスト範囲</a>
+    <a class="nav-primary" href="#resources" data-nav="resources"><span aria-hidden="true">▶</span>授業の動画・スライド</a>
+    <span class="nav-label">理解を助ける学習ツール</span>
+    <a href="#units" data-nav="units"><span aria-hidden="true">▤</span>図と解説</a>
+    <a href="#formulas" data-nav="formulas"><span aria-hidden="true">ƒ</span>公式ノート</a>
+    <a href="#practice" data-nav="practice"><span aria-hidden="true">✓</span>確認問題</a>
+    <a href="#lab" data-nav="lab"><span aria-hidden="true">◉</span>ためして理解</a>
   </nav>
-  <div class="side-progress"><p>自分のペースで、一歩ずつ。</p><div class="progress-track"><i id="sidebar-progress"></i></div><small id="sidebar-progress-text">0 / 8 単元 学習済み</small></div>
+  <div class="side-progress"><p>補助学習の記録</p><div class="progress-track"><i id="sidebar-progress"></i></div><small id="sidebar-progress-text">0 / 8 単元 学習済み</small></div>
   <div class="side-bottom"><span class="status-dot"></span>2学期期末テスト対策<br><small>記録はこのブラウザに保存されます</small></div>
 </aside>
 <div class="workspace">
   <header class="topbar"><span id="breadcrumb">学習ホーム</span><span class="term-pill">2学期期末</span></header>
   <main id="main" tabindex="-1"></main>
-  <footer>R08 電気回路B <span>考える → 確かめる → もう一度。</span><a href="#scope">テスト範囲・指定問題</a></footer>
+  <footer>R08 電気回路B <span>範囲を確認 → 授業で復習 → 指定問題へ。</span><a href="#scope">テスト範囲・指定問題</a></footer>
 </div>
 <dialog id="resource-dialog" aria-labelledby="resource-title"><div class="dialog-head"><div><small>授業教材</small><h2 id="resource-title"></h2></div><button class="icon-button" id="close-resource" aria-label="教材を閉じる">×</button></div><div id="resource-body"></div><div class="dialog-foot"><a id="resource-direct" class="button secondary" target="_blank" rel="noopener">別タブで開く ↗</a><a id="resource-download" class="text-link" download>ダウンロード ↓</a><a id="resource-original" class="text-link" download hidden>PowerPointをダウンロード ↓</a></div></dialog>
 <div id="toast" role="status" aria-live="polite"></div>

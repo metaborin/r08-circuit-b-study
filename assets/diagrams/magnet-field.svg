@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" role="img" aria-labelledby="title desc">
+  <title id="title">棒磁石の磁力線は、外側でN極からS極、内部でS極からN極に向かう</title>
+  <desc id="desc">左がN極、右がS極の棒磁石。上側と下側の青い閉じた曲線は、磁石の外では左のN極から右のS極へ向かい、磁石内部では右から左へ戻る。磁力線は磁極で途切れず閉ループをつくる模式図。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1L9 5L0 9Z" fill="#2563a6"/></marker></defs>
+  <style>svg{font-size:18px;fill:#173f39}text{font-family:"Yu Gothic","Meiryo",sans-serif}.title{font-size:23px;font-weight:700}.note{fill:#52736c}.field{fill:none;stroke:#2563a6;stroke-width:2.8;stroke-linecap:round}</style>
+  <rect width="480" height="280" rx="16" fill="#f3f8fc"/>
+  <text x="24" y="32" class="title">磁力線は、途切れない閉ループ</text>
+  <text x="24" y="60" class="note">外側：N → S　　内部：S → N</text>
+  <rect x="160" y="117" width="80" height="68" fill="#fce7e4"/>
+  <rect x="240" y="117" width="80" height="68" fill="#e1ecfa"/>
+  <rect x="160" y="117" width="160" height="68" rx="3" fill="none" stroke="#12685a" stroke-width="2.5"/>
+  <path d="M240 117V185" stroke="#12685a" stroke-width="1.5"/>
+  <g class="field"><path d="M160 129C80 129 85 84 190 84H290C395 84 400 129 320 129H160Z"/><path d="M160 173C80 173 85 218 190 218H290C395 218 400 173 320 173H160Z"/>
+    <path d="M212 84H268" marker-end="url(#arrow)"/><path d="M212 218H268" marker-end="url(#arrow)"/>
+    <path d="M270 129H216" marker-end="url(#arrow)"/><path d="M270 173H216" marker-end="url(#arrow)"/>
+  </g>
+  <text x="200" y="160" text-anchor="middle" font-size="26" font-weight="700" fill="#b84038">N</text>
+  <text x="280" y="160" text-anchor="middle" font-size="26" font-weight="700" fill="#2563a6">S</text>
+  <text x="240" y="258" text-anchor="middle" class="note">磁石の内部も磁力線がつながる</text>
+</svg>
