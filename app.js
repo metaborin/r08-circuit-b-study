@@ -136,7 +136,7 @@
    ],note:''}
   ];
   return '<section class="scope-snapshot" aria-labelledby="scope-snapshot-title">'+
-   '<header class="scope-snapshot-head"><div><p class="scope-snapshot-course">電気回路B · 2学期期末</p><h1 id="scope-snapshot-title">テスト範囲 ひと目で一覧</h1></div><div class="scope-exam-pills"><span>試験 <strong>50分</strong></span><span><strong>電卓を持参</strong>（使用可）</span></div><nav class="scope-snapshot-nav" aria-label="一覧から移動"><a href="#home">学習ホーム</a><a href="#resources">授業の動画・スライド</a><a href="#scope/details">詳しい範囲・解説 →</a></nav></header>'+
+   '<header class="scope-snapshot-head"><div><p class="scope-snapshot-course">電気回路B · 2学期期末</p><h1 id="scope-snapshot-title">テスト範囲</h1></div><div class="scope-exam-pills"><span>試験 <strong>50分</strong></span><span><strong>電卓を持参</strong>（使用可）</span></div><nav class="scope-snapshot-nav" aria-label="範囲の詳しい説明"><a href="#scope/details">詳しい範囲・解説 →</a></nav></header>'+
    '<p class="scope-snapshot-key"><span>ページ・問題番号は<strong>教科書の番号</strong>です。</span><span class="scope-key-in">◎ 範囲内を優先</span><span class="scope-key-out">× 範囲外</span><span>章末問題は指定番号のみ</span></p>'+
    '<div class="scope-snapshot-columns">'+chapters.map(c=>
     '<section class="scope-snapshot-chapter '+c.id+'" aria-labelledby="snapshot-'+c.id+'"><div class="scope-snapshot-chapter-head"><div class="scope-snapshot-icon">'+diagramImage(c.diagram,true)+'</div><div><span>'+c.chapter+'</span><h2 id="snapshot-'+c.id+'">'+c.title+'</h2></div><strong>'+c.pages+'</strong><a href="#resources/topic/'+c.id+'" class="scope-snapshot-materials">授業教材 →</a></div>'+
@@ -149,7 +149,7 @@
    '<p class="scope-snapshot-reminder"><strong>◎ ここは範囲内：</strong>p.105の充放電計算、p.119の磁気誘導、磁極に働く力。<span>「放電」「電磁誘導」「導体に働く電磁力」と区別しよう。</span></p></section>';
  }
 
- function scopeDetails(){return '<a href="#scope" class="text-link scope-back-to-summary">← テスト範囲の一覧に戻る</a>'+heading('テスト範囲・指定問題','2学期期末 テスト範囲','教科書の印刷ページ番号で確認し、指定された例題・問・練習問題に取り組もう。')+`
+ function scopeDetails(){return '<a href="#scope" class="text-link scope-back-to-summary">← テスト範囲の一覧に戻る</a>'+heading('テスト範囲・指定問題','テスト範囲','教科書の印刷ページ番号で確認し、指定された例題・問・練習問題に取り組もう。')+`
  <section class="exam-summary" aria-label="試験の案内"><div><span>試験時間</span><strong>50分</strong></div><div><span>持ち物</span><strong>電卓を持参</strong><small>テストで使用できます</small></div><div><span>基本の範囲</span><strong>コンデンサ・電流と磁界</strong><small>章末問題は下の指定番号のみ</small></div></section>
  ${scopeOverview()}<nav class="scope-jump-links" aria-label="範囲表の項目へ移動"><a href="#scope/capacitor">コンデンサの範囲</a><a href="#scope/magnetic">電流と磁界の範囲</a><a href="#scope/problems">節末・章末の指定問題</a><a href="#scope/exclusions">範囲外の内容</a></nav>
  <article class="article-card" id="scope-capacitor"><div class="scope-section-heading"><div class="scope-section-icon">${diagramImage('capacitor-series',true)}</div><h2>第3章 静電気 <span class="scope-page">p.102–109</span></h2></div><div class="scope-summary-links"><a class="button secondary small" href="#resources/topic/capacitor">コンデンサの授業教材を見る →</a></div><p class="table-hint">表は横にスクロールできます。</p><div class="scope-scroll" tabindex="0" role="region" aria-label="第3章の範囲と例題・問"><table class="scope-table syllabus-table"><thead><tr><th scope="col">ページ</th><th scope="col">学習内容</th><th scope="col">例題・問</th></tr></thead><tbody>
@@ -183,7 +183,7 @@
   const nav=page==='lesson'?'units':page;$$('[data-nav]').forEach(a=>{a.classList.toggle('active',a.dataset.nav===nav);if(a.dataset.nav===nav)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
   if(page==='resources'){resourceQuery='';resourceTopic=id==='topic'&&(value==='magnetic'||resourceTopics.some(([key])=>key===value))?value:'all';resourceFilter=id==='type'&&['slide','video'].includes(value)?value:'all';}
   const titles={home:'学習ホーム',units:'図と解説',resources:'授業の動画・スライド',practice:'確認問題',formulas:'公式ノート',lab:'ためして理解',scope:'テスト範囲',lesson:'単元の学習'};$('#breadcrumb').textContent=titles[page]||'学習ホーム';document.title=`${titles[page]||'学習ホーム'} | 電気回路B`;
-  $('#main').classList.toggle('scope-summary-main',page==='scope'&&!id);$('.workspace').classList.toggle('scope-summary-workspace',page==='scope'&&!id);$('.sidebar').classList.toggle('scope-summary-hidden',page==='scope'&&!id);const renderers={home,units,resources:resourcePage,practice:practicePage,formulas,lab:labPage,scope:()=>id?scopeDetails():scopeSummary()};$('#main').innerHTML=page==='lesson'?lessonPage(id):(renderers[page]||home)();if(page==='resources')filterResources();if(page==='lab')updateLab();
+  $('#main').classList.toggle('scope-summary-main',page==='scope'&&!id);const renderers={home,units,resources:resourcePage,practice:practicePage,formulas,lab:labPage,scope:()=>id?scopeDetails():scopeSummary()};$('#main').innerHTML=page==='lesson'?lessonPage(id):(renderers[page]||home)();if(page==='resources')filterResources();if(page==='lab')updateLab();
   if(!storageAvailable&&page==='home')$('#main').insertAdjacentHTML('afterbegin','<div class="notice">このブラウザでは記録を保存できません。ページを閉じると学習記録が消える場合があります。</div>');updateProgress();window.scrollTo(0,0);
   if(page==='scope'&&id){const targets={capacitor:'scope-capacitor',magnetic:'scope-magnetic',problems:'assigned-problems',exclusions:'scope-exclusions'};const target=targets[id]&&$('#'+targets[id]);if(target){target.setAttribute('tabindex','-1');target.scrollIntoView({block:'start'});target.focus({preventScroll:true});}}
  }
