@@ -92,6 +92,119 @@ window.RESOURCES = [
     "note": "問2は今回のテスト範囲外です。❶・❸・❹・❺・❻・❼を中心に復習してください。"
   },
   {
+    "id": "video-capacitor-review-background",
+    "title": "コンデンサの節末問題｜背景あり版",
+    "subtitle": "p.109の❶・❸・❹・❺・❻・❼を、図と途中式で復習",
+    "category": "capacitor",
+    "topic": "capacitor",
+    "type": "video",
+    "duration": "24分33秒",
+    "file": "assets/video-capacitor-review-background.mp4?v=20261117-materials1",
+    "thumb": "assets/video-capacitor-review-background.jpg?v=20261117-materials1",
+    "lessons": [
+      "parallel",
+      "series",
+      "energy",
+      "capacitor-summary"
+    ],
+    "tags": [
+      "授業動画",
+      "節末問題",
+      "p.109",
+      "コンデンサ",
+      "背景あり版"
+    ]
+  },
+  {
+    "id": "video-capacitor-chapter-a2",
+    "title": "第3章 章末問題 A2｜解説動画",
+    "subtitle": "p.114–115。A2の2・3・4・6を順に確認",
+    "category": "capacitor",
+    "topic": "capacitor",
+    "type": "video",
+    "duration": "14分06秒",
+    "file": "assets/video-capacitor-chapter-a2.mp4?v=20261117-materials1",
+    "thumb": "assets/video-capacitor-chapter-a2.jpg?v=20261117-materials1",
+    "lessons": [
+      "parallel",
+      "series",
+      "energy",
+      "capacitor-summary"
+    ],
+    "tags": [
+      "授業動画",
+      "章末問題",
+      "A2",
+      "2",
+      "3",
+      "4",
+      "6",
+      "p.114",
+      "p.115"
+    ],
+    "note": "後半の「A2の7」は今回の通常範囲・任意チャレンジのどちらにも含みません。指定の2・3・4・6を復習してください。"
+  },
+  {
+    "id": "video-capacitor-chapter-b2c2",
+    "title": "第3章 章末問題 B2・C2｜解説動画",
+    "subtitle": "p.115–116。B2の3〜7とC2の2を計算手順から復習",
+    "category": "capacitor",
+    "topic": "capacitor",
+    "type": "video",
+    "duration": "16分22秒",
+    "file": "assets/video-capacitor-chapter-b2c2.mp4?v=20261117-materials1",
+    "thumb": "assets/video-capacitor-chapter-b2c2.jpg?v=20261117-materials1",
+    "lessons": [
+      "parallel",
+      "series",
+      "energy",
+      "capacitor-summary"
+    ],
+    "tags": [
+      "授業動画",
+      "章末問題",
+      "B2",
+      "C2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "2",
+      "p.115",
+      "p.116"
+    ],
+    "note": "任意チャレンジの「B2の8」はこの動画に含まれていません。"
+  },
+  {
+    "id": "lesson-magnetic-intro",
+    "title": "電流と磁界｜第4章の振り返りと導入",
+    "subtitle": "磁石・右ねじ・磁界の強さを振り返り、直線状導線とソレノイドへ",
+    "category": "magnetic",
+    "topic": "review",
+    "type": "slide",
+    "pages": 3,
+    "file": "assets/slides/magnetic-review-intro.pdf",
+    "originalFile": "assets/slides/magnetic-review-intro.pptx",
+    "lessons": [
+      "poles",
+      "direction",
+      "point-field",
+      "current-field"
+    ],
+    "note": "3ページ目の「余裕があれば」は授業時の進め方です。ソレノイドの例題6・問11・問12も通常のテスト範囲に含まれます。",
+    "tags": [
+      "review",
+      "授業スライド",
+      "振り返り",
+      "磁石",
+      "右ねじ",
+      "直線状導線",
+      "ソレノイド"
+    ],
+    "thumb": "assets/thumbs/magnetic-review-intro.jpg"
+  },
+  {
     "id": "lesson-magnetic-force",
     "title": "磁極に働く力｜例題1・問1・問2",
     "subtitle": "p.120–121。磁極の強さ・距離から力を計算",
@@ -544,13 +657,13 @@ window.RESOURCES = [
   {
     "id": "video-magnetic-review-background",
     "title": "電流と磁界の節末問題｜背景あり版",
-    "subtitle": "p.131の❶〜❻。背景付きの別構成で復習",
+    "subtitle": "p.131の❶〜❻。図と式を大きくした背景あり版で復習",
     "topic": "review",
     "category": "magnetic",
     "type": "video",
     "duration": "19分55秒",
-    "file": "assets/video-magnetic-review-background.mp4?v=20261107-startfix1",
-    "thumb": "assets/video-magnetic-review-background.jpg",
+    "file": "assets/video-magnetic-review-background.mp4?v=20261117-materials1",
+    "thumb": "assets/video-magnetic-review-background.jpg?v=20261117-materials1",
     "lessons": [
       "poles",
       "direction",
@@ -563,5 +676,130 @@ window.RESOURCES = [
       "電流と磁界の節末問題",
       "背景あり版"
     ]
+  },
+  {
+    "id": "video-magnetic-chapter-a1",
+    "title": "第4章 章末問題 A1｜解説動画",
+    "subtitle": "p.186。A1の1①〜⑤・2・3を、用語と計算で確認",
+    "category": "magnetic",
+    "topic": "review",
+    "type": "video",
+    "duration": "6分31秒",
+    "file": "assets/video-magnetic-chapter-a1.mp4?v=20261117-materials1",
+    "thumb": "assets/video-magnetic-chapter-a1.jpg?v=20261117-materials1",
+    "lessons": [
+      "poles",
+      "direction",
+      "point-field",
+      "current-field"
+    ],
+    "tags": [
+      "授業動画",
+      "章末問題",
+      "A1",
+      "p.186",
+      "1",
+      "①",
+      "②",
+      "③",
+      "④",
+      "⑤",
+      "2",
+      "3"
+    ]
+  },
+  {
+    "id": "print-magnetic-formulas-worksheet",
+    "title": "電流と磁界の公式を覚える｜課題プリント",
+    "subtitle": "基本7式・式変形・計算の20問で復習",
+    "category": "magnetic",
+    "topic": "review",
+    "type": "print",
+    "pages": 2,
+    "file": "assets/prints/magnetic-formulas-worksheet.pdf",
+    "lessons": [
+      "poles",
+      "point-field",
+      "current-field"
+    ],
+    "note": "PDFは2ページ（原稿4ページの2面付け）です。問番号はプリント独自の番号で、教科書の指定問題番号とは異なります。",
+    "tags": [
+      "review",
+      "課題プリント",
+      "練習",
+      "公式"
+    ],
+    "thumb": "assets/thumbs/magnetic-formulas-worksheet.jpg"
+  },
+  {
+    "id": "print-magnetic-formulas-answers",
+    "title": "電流と磁界の公式を覚える｜解答例",
+    "subtitle": "基本7式・式変形・計算の20問の答えを確認",
+    "category": "magnetic",
+    "topic": "review",
+    "type": "print",
+    "pages": 2,
+    "file": "assets/prints/magnetic-formulas-answers.pdf",
+    "lessons": [
+      "poles",
+      "point-field",
+      "current-field"
+    ],
+    "note": "PDFは2ページ（原稿4ページの2面付け）です。問番号はプリント独自の番号で、教科書の指定問題番号とは異なります。課題に取り組んだ後、解答例で確認してください。",
+    "tags": [
+      "review",
+      "課題プリント",
+      "解答例",
+      "公式"
+    ],
+    "thumb": "assets/thumbs/magnetic-formulas-answers.jpg"
+  },
+  {
+    "id": "print-magnetic-terms-worksheet",
+    "title": "電流と磁界の重要用語｜課題プリント",
+    "subtitle": "磁石・磁気誘導・右ねじ・法則・単位の34問で復習",
+    "category": "magnetic",
+    "topic": "review",
+    "type": "print",
+    "pages": 2,
+    "file": "assets/prints/magnetic-terms-worksheet.pdf",
+    "lessons": [
+      "poles",
+      "direction",
+      "point-field",
+      "current-field"
+    ],
+    "note": "PDFは2ページ（原稿4ページの2面付け）です。問番号はプリント独自の番号で、教科書の指定問題番号とは異なります。",
+    "tags": [
+      "review",
+      "課題プリント",
+      "練習",
+      "用語"
+    ],
+    "thumb": "assets/thumbs/magnetic-terms-worksheet.jpg"
+  },
+  {
+    "id": "print-magnetic-terms-answers",
+    "title": "電流と磁界の重要用語｜解答例",
+    "subtitle": "磁石・磁気誘導・右ねじ・法則・単位の34問の答えを確認",
+    "category": "magnetic",
+    "topic": "review",
+    "type": "print",
+    "pages": 2,
+    "file": "assets/prints/magnetic-terms-answers.pdf",
+    "lessons": [
+      "poles",
+      "direction",
+      "point-field",
+      "current-field"
+    ],
+    "note": "PDFは2ページ（原稿4ページの2面付け）です。問番号はプリント独自の番号で、教科書の指定問題番号とは異なります。課題に取り組んだ後、解答例で確認してください。",
+    "tags": [
+      "review",
+      "課題プリント",
+      "解答例",
+      "用語"
+    ],
+    "thumb": "assets/thumbs/magnetic-terms-answers.jpg"
   }
 ];
