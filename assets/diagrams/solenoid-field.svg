@@ -14,5 +14,5 @@
   <text x="415" y="158" fill="#2563a6" font-size="25">H</text>
   <text x="51" y="112" fill="#bd6b20" font-size="20">I</text><text x="51" y="202" fill="#bd6b20" font-size="20">I</text>
   <text x="80" y="231" fill="#bd6b20">⊙ 手前　⊗ 奥</text><text x="302" y="231" class="formula">H = NI</text>
-  <text x="240" y="264" text-anchor="middle" class="note">N：1 m あたりの巻数〔回/m〕</text>
+  <g class="note" aria-hidden="true"><text x="68" y="264">N：1 m あたりの巻数</text><text x="315" y="264">〔</text><g text-anchor="middle" font-size="17"><text x="349" y="250">回</text><path d="M337 257H361" fill="none" stroke="#52736c" stroke-width="1.6"/><text x="349" y="276">m</text></g><text x="369" y="264">〕</text></g>
 </svg>

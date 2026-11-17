@@ -12,7 +12,7 @@
   <circle cx="151" cy="149" r="11" fill="#eef5fd" stroke="#2563a6" stroke-width="2.8"/><circle cx="151" cy="149" r="3.8" fill="#2563a6"/>
   <text x="167" y="140" fill="#2563a6" font-size="22">H</text><text x="193" y="178" font-size="22">r</text><text x="236" y="120" fill="#bd6b20" font-size="23">I</text>
   <text x="278" y="114" fill="#2563a6">中心の磁界</text>
-  <text x="278" y="150" class="formula">H = NI / (2r)</text>
+  <g class="formula" aria-hidden="true"><text x="278" y="152">H =</text><g text-anchor="middle"><text x="370" y="136">NI</text><path d="M347 144H393" fill="none" stroke="#173f39" stroke-width="1.8"/><text x="370" y="167">2r</text></g></g>
   <text x="278" y="190" class="note">N：全体の巻数</text>
   <text x="278" y="219" class="note">r：コイルの半径</text>
   <text x="240" y="260" text-anchor="middle" class="note">右手の指を電流に沿わせ、親指が H</text>

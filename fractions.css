@@ -1,0 +1,35 @@
+/* Keep each numerator and denominator together; surrounding prose can still wrap. */
+.math-fraction {
+  display: inline-grid;
+  grid-template-rows: auto auto;
+  align-items: center;
+  justify-items: stretch;
+  vertical-align: middle;
+  margin: .12em .16em;
+  min-width: .85em;
+  text-align: center;
+  line-height: 1.25;
+  white-space: nowrap;
+  font-variant-numeric: lining-nums;
+}
+.math-numerator,
+.math-denominator {
+  display: block;
+  padding: .08em .2em;
+  text-align: center;
+  line-height: 1.25;
+}
+.math-numerator { border-bottom: .065em solid currentColor; }
+.math-fraction .math-fraction { font-size: .9em; }
+.formula-expression { line-height: 1.9; }
+.formula-expression .math-fraction { margin-top: .2em; margin-bottom: .2em; }
+.scope-formula { line-height: 1.9; }
+.option .math-fraction { margin-top: .15em; margin-bottom: .15em; }
+.lab-result .math-fraction { font-size: 1em; }
+@media screen and (max-width: 700px) {
+  .formula-expression { overflow-wrap: anywhere; }
+  .math-fraction { overflow-wrap: normal; }
+}
+@media print {
+  .math-fraction { break-inside: avoid; }
+}

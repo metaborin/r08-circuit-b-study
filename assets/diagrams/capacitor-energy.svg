@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-labelledby="title desc">
   <title id="title">コンデンサの極板間の電界に蓄えられるエネルギー</title>
-  <desc id="desc">左の極板にプラスQ、右の極板にマイナスQの電荷がある。電界Eは正の極板から負の極板へ向かう。静電容量C、極板間電圧Vのコンデンサに蓄えられるエネルギーWは2分の1CVの2乗。</desc>
+  <desc id="desc">左の極板にプラスQ、右の極板にマイナスQの電荷がある。電界Eは正の極板から負の極板へ向かう。静電容量C、極板間電圧Vのコンデンサに蓄えられるエネルギーWは、2分の1にCとVの2乗を掛けた値。2分の1にQとVを掛けた値、Qの2乗を2Cで割った値とも等しい。</desc>
   <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1L9 5L0 9Z" fill="#bd6b20"/></marker></defs>
   <style>svg{font-size:18px;fill:#173f39}text{font-family:"Yu Gothic","Meiryo",sans-serif}.title{font-size:23px;font-weight:700}.note{fill:#52736c}.formula{font-size:23px;font-weight:700}.positive{fill:#bd6b20}.negative{fill:#2563a6}</style>
-  <rect width="480" height="280" rx="16" fill="#f5faf8"/>
+  <rect width="480" height="300" rx="16" fill="#f5faf8"/>
   <text x="24" y="32" class="title">コンデンサにたまるエネルギー</text>
   <text x="24" y="60" class="note">極板の間の電界にエネルギーを蓄える</text>
   <rect x="135" y="99" width="180" height="96" fill="#fff1df"/>
@@ -15,5 +15,12 @@
   <text x="225" y="92" text-anchor="middle" class="positive" font-size="20">電界 E</text>
   <path d="M135 206V215H315V206" fill="none" stroke="#12685a" stroke-width="2"/>
   <text x="225" y="237" text-anchor="middle">電圧 V</text>
-  <text x="240" y="265" text-anchor="middle" class="formula">W = ½CV² = ½QV = Q²/(2C)</text>
+  <g class="formula" aria-hidden="true">
+    <text x="51" y="278">W =</text>
+    <g text-anchor="middle"><text x="121" y="262">1</text><path d="M109 270H133" fill="none" stroke="#173f39" stroke-width="1.8"/><text x="121" y="292">2</text></g>
+    <text x="140" y="278">CV² =</text>
+    <g text-anchor="middle"><text x="251" y="262">1</text><path d="M239 270H263" fill="none" stroke="#173f39" stroke-width="1.8"/><text x="251" y="292">2</text></g>
+    <text x="270" y="278">QV =</text>
+    <g text-anchor="middle"><text x="393" y="262">Q²</text><path d="M370 270H416" fill="none" stroke="#173f39" stroke-width="1.8"/><text x="393" y="292">2C</text></g>
+  </g>
 </svg>
