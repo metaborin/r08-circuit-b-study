@@ -144,3 +144,26 @@ main.scope-summary-main { container: scope-list / inline-size; }
   .scope-snapshot-foot p, .scope-snapshot-reminder, .scope-snapshot-key { font-size: 8pt; }
   .scope-snapshot-foot { grid-template-columns: 1fr 210px; gap: 10px; }
 }
+
+/* Notebook submission dates shared by home and both scope views. */
+.notebook-notice { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; gap: 4px 18px; min-width: 0; margin: 0 0 18px; padding: 14px 18px; border: 1px solid #c4d8cd; border-left: 4px solid var(--green, #12685a); border-radius: 12px; background: #edf5ef; color: var(--ink, #233735); }
+.notebook-notice-title { font-size: 17px; line-height: 1.6; color: var(--green, #12685a); }
+.notebook-deadlines { display: flex; flex-wrap: wrap; gap: 4px 24px; min-width: 0; margin: 0; }
+.notebook-deadlines > div { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 4px; min-width: 0; }
+.notebook-deadlines dt, .notebook-deadlines dd { margin: 0; font-size: 16px; line-height: 1.65; }
+.notebook-deadlines dt { font-weight: 700; }
+.notebook-deadlines dd { font-weight: 600; overflow-wrap: anywhere; }
+.notebook-deadlines time { white-space: nowrap; }
+.notebook-notice-note { grid-column: 2; margin: 0; font-size: 13px; line-height: 1.7; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .notebook-notice { grid-template-columns: minmax(0, 1fr); gap: 6px; margin-bottom: 16px; padding: 12px 14px; }
+  .notebook-deadlines { gap: 4px 16px; }
+  .notebook-deadlines > div { flex-basis: 100%; }
+  .notebook-notice-note { grid-column: 1; }
+}
+@media print {
+  .notebook-notice { break-inside: avoid; margin-bottom: 10px; padding: 7px 10px; background: white; }
+  .notebook-notice-title { font-size: 11pt; }
+  .notebook-deadlines dt, .notebook-deadlines dd { font-size: 10pt; }
+  .notebook-notice-note { font-size: 9pt; }
+}
