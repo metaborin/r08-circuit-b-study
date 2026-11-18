@@ -12,7 +12,10 @@
   <link rel="stylesheet" href="mobile.css?v=20261117-mobile1">
   <link rel="stylesheet" href="fractions.css?v=20261117-fractions1">
   <script src="fractions.js?v=20261117-fractions1" defer></script>
-  <script src="lessons.js?v=20261117-fractions1" defer></script><script src="resources.js?v=20261117-materials1" defer></script><script src="app.js?v=20261117-notebook1" defer></script>
+  <script src="lessons.js?v=20261117-fractions1" defer></script><script src="resources.js?v=20261117-materials1" defer></script>
+  <script src="usage-config.js?v=20261118-usage1" defer></script>
+  <script src="usage.js?v=20261118-usage1" defer></script>
+  <script src="app.js?v=20261118-usage1" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -36,8 +39,9 @@
 <div class="workspace">
   <header class="topbar"><span id="breadcrumb">学習ホーム</span><span class="term-pill">2学期期末</span></header>
   <main id="main" tabindex="-1"></main>
-  <footer>R08 電気回路B <span>範囲を確認 → 授業で復習 → 指定問題へ。</span><a href="#scope">テスト範囲・指定問題</a></footer>
+  <footer>R08 電気回路B <small id="usage-notice" hidden>教材改善のため、ページの閲覧・スライドの表示・動画の再生回数を、氏名を記録せず集計します。</small><a href="#scope">テスト範囲・指定問題</a></footer>
 </div>
 <dialog id="resource-dialog" aria-labelledby="resource-title"><div class="dialog-head"><div><small>授業教材</small><h2 id="resource-title"></h2></div><button class="icon-button" id="close-resource" aria-label="教材を閉じる">×</button></div><div id="resource-body"></div><div class="dialog-foot"><a id="resource-direct" class="button secondary" target="_blank" rel="noopener">別タブで開く ↗</a><a id="resource-download" class="text-link" download>ダウンロード ↓</a><a id="resource-original" class="text-link" download hidden>PowerPointをダウンロード ↓</a></div></dialog>
 <div id="toast" role="status" aria-live="polite"></div>
 </body></html>
+

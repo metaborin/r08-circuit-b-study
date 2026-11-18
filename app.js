@@ -45,6 +45,7 @@
 
  let toastTimer, practice=null, resourceFilter='all', resourceTopic='all', resourceQuery='', unitFilter='all';
  let activeResource=null, activePartIndex=0, playbackVersion=0;
+ let usagePlayer;
  function toast(message){$('#toast').textContent=message;$('#toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3000);}
  function updateProgress(){const n=state.completed.length;$('#sidebar-progress').style.width=`${lessons.length?n/lessons.length*100:0}%`;$('#sidebar-progress-text').textContent=`${n} / ${lessons.length} 単元 学習済み`;}
  function heading(en,title,desc){return `<div class="page-heading"><div class="eyebrow">${en}</div><h1>${title}</h1><p>${desc}</p></div>`;}
@@ -81,13 +82,14 @@
  function selectResourcePart(index,autoplay=false){
   const r=activeResource,video=$('#resource-video');if(!r||r.type!=='video'||!video)return;
   const parts=videoParts(r);if(!Number.isInteger(index)||index<0||index>=parts.length)return;
+  usagePlayer?.beforePartChange();
   const version=++playbackVersion;activePartIndex=index;video.pause();video.src=parts[index].file;video.load();setResourceLinks(parts[index].file);
   $$('#resource-body [data-video-part]').forEach(button=>{const selected=Number(button.dataset.videoPart)===index;button.classList.toggle('active',selected);button.setAttribute('aria-pressed',selected);});
   const current=$('#resource-part-current');if(current)current.textContent=`表示中：${partLabel(parts[index],index,parts.length)}`;
   const status=$('#resource-playback-status');status.hidden=true;status.textContent='';
   if(autoplay){const playing=video.play();if(playing&&typeof playing.catch==='function')playing.catch(()=>{if(version!==playbackVersion||activeResource!==r)return;status.hidden=false;status.textContent='動画を開きました。再生ボタンを押して続けてください。';});}
  }
- function closeResourceMedia(){playbackVersion++;activeResource=null;const video=$('#resource-video');if(video){video.pause();video.removeAttribute('src');video.load();}$('#resource-body').innerHTML='';}
+ function closeResourceMedia(){usagePlayer?.close();usagePlayer=undefined;playbackVersion++;activeResource=null;const video=$('#resource-video');if(video){video.pause();video.removeAttribute('src');video.load();}$('#resource-body').innerHTML='';}
  function showResource(id){
   const r=resources.find(v=>v.id===id);if(!r)return;closeResourceMedia();activeResource=r;activePartIndex=0;$('#resource-title').textContent=r.title;
   const parts=r.type==='video'?videoParts(r):[],split=parts.length>1;
@@ -95,6 +97,8 @@
   $('#resource-body').innerHTML=(r.type!=='video'?`<a class="mobile-pdf-open" href="${escape(r.file)}" target="_blank" rel="noopener">${resourceTypeLabel(r)}を別タブで開く ↗</a>`:'')+(r.note?`<p class="resource-advisory">${escape(r.note)}</p>`:'')+partPicker+(r.type==='video'?`<video id="resource-video" controls playsinline preload="metadata" poster="${escape(r.thumb)}">動画を再生できない場合は、下の「別タブで開く」を使ってください。</video><p id="resource-playback-status" class="resource-playback-status" role="status" hidden></p>`:`<iframe src="${escape(r.file)}#view=FitH" title="${escape(r.title)} PDF"></iframe>`);
   const original=$('#resource-original');original.hidden=!r.originalFile;if(r.originalFile)original.href=r.originalFile;else original.removeAttribute('href');
   if(!$('#resource-dialog').open)$('#resource-dialog').showModal();
+  if(r.type==='slide')window.StudyUsage?.slideOpen(r.id);
+  if(r.type==='video')usagePlayer=window.StudyUsage?.observeVideo($('#resource-video'),r.id);
   if(r.type==='video'){const video=$('#resource-video');video.addEventListener('playing',()=>{if(activeResource===r)$('#resource-playback-status').hidden=true;});video.addEventListener('ended',()=>{if(activeResource!==r||!$('#resource-dialog').open)return;if(activePartIndex+1<parts.length)selectResourcePart(activePartIndex+1,true);else{const status=$('#resource-playback-status');status.hidden=false;status.textContent='最後まで再生しました。もう一度見るときは、再生ボタン'+(split?'または上の動画番号':'')+'を選んでください。';}});selectResourcePart(0,true);}else setResourceLinks(r.file);
  }
  function quizCard(l,qi,session=false){const q=l.quiz[qi],key=`${l.id}:${qi}`,answer=session?practice.answers[practice.index]:state.answers[key];const answered=Number.isInteger(answer);return `<div class="quiz-card"><div class="quiz-number">${session?'CHECK '+String(practice.index+1).padStart(2,'0'):'CHECK '+String(qi+1).padStart(2,'0')}</div><h3>${mathText(q.question)}</h3><div class="options">${q.options.map((opt,i)=>`<button class="option ${answered?(i===q.answer?'correct':i===answer?'wrong':''):''}" ${answered?'disabled':''} data-answer="${i}" data-lesson="${l.id}" data-question="${qi}" ${session?'data-session="true"':''}><span class="option-letter">${String.fromCharCode(65+i)}</span><span>${mathText(opt)}</span>${answered&&i===q.answer?'<span aria-label="正解">✓</span>':''}</button>`).join('')}</div>${answered?`<div class="feedback ${answer===q.answer?'':'wrong'}" role="status"><strong>${answer===q.answer?'正解です。':'もう一度、ポイントを確認しよう。'} 正答：${String.fromCharCode(65+q.answer)}</strong>${mathText(q.explanation)}</div>`:''}</div>`;}
@@ -180,7 +184,7 @@
  <tr><th scope="row">第4章 章末問題<br>p.186–187<br><button type="button" class="button secondary small" data-resource="video-magnetic-chapter-a1" aria-haspopup="dialog" aria-label="第4章章末問題A1の解説動画を開く">A1の動画 ▶</button></th><td class="scope-in"><strong>A1：</strong>1の①–⑤、2、3</td><td><strong>A1：</strong>1の⑥・⑦<br><strong>A2・A4・B4：</strong>すべて<br>p.186上部の②–⑥</td></tr>
  </tbody></table></div><section class="challenge-note"><h3>チャレンジ（余裕がある人）</h3><p><strong>第3章 章末 B2：8（p.116）</strong><br>範囲外のp.99の公式も使います。まずは上の範囲内の問題を優先しましょう。<br>B2：8の解説動画は未収録です。</p></section><p class="storage-note">サイトの確認問題は、教科書の指定問題を解くための補助練習です。上の問題番号は教科書の番号であり、サイトのCHECK番号とは別です。</p></article>
  <article class="article-card" id="scope-exclusions"><h2>テストに出ない内容</h2><ul class="scope-exclusions"><li>放電（p.110–114）</li><li>点電荷間のクーロン力、点電荷の電界・電位、球の静電容量</li><li>電磁誘導</li><li>導体に働く電磁力</li><li>磁気回路</li><li>インダクタンス</li></ul><p>電磁力の解説・例題・確認問題は掲載していません。<strong>コンデンサの充放電の計算（p.105）は範囲内</strong>です。「放電（p.110–114）」と区別しましょう。</p></article>
- <article class="article-card"><h2>このサイトの使い方</h2><p>まず「テスト範囲」でページと指定問題を確認し、「授業教材」で復習してから、教科書の問題に取り組みましょう。「図と解説」「公式ノート」「確認問題」は補助として活用できます。</p><h3>学習記録について</h3><p>学習済みのチェックと解答は、使用中の端末・ブラウザに保存されます。氏名・メールアドレスの入力や先生への送信はありません。別の端末とは同期しません。</p><div class="reset-zone"><button class="button secondary small" id="reset-progress">このブラウザの学習記録を消去</button><div id="reset-confirm"></div></div></article>`;}
+ <article class="article-card"><h2>このサイトの使い方</h2><p>まず「テスト範囲」でページと指定問題を確認し、「授業教材」で復習してから、教科書の問題に取り組みましょう。「図と解説」「公式ノート」「確認問題」は補助として活用できます。</p><h3>学習記録について</h3><p>学習済みのチェックと解答は、この端末のブラウザ内にだけ保存されます。</p><div class="reset-zone"><button class="button secondary small" id="reset-progress">このブラウザの学習記録を消去</button><div id="reset-confirm"></div></div></article>`;}
 
 
  function setMobileMenu(open,restoreFocus=false){
@@ -211,6 +215,7 @@
   $('#main').classList.toggle('scope-summary-main',page==='scope'&&!id);const renderers={home,units,resources:resourcePage,practice:practicePage,formulas,lab:labPage,scope:()=>id?scopeDetails():scopeSummary()};$('#main').innerHTML=page==='lesson'?lessonPage(id):(renderers[page]||home)();if(page==='resources')filterResources();if(page==='lab')updateLab();if(page==='scope')labelScopeTables();
   if(!storageAvailable&&page==='home')$('#main').insertAdjacentHTML('afterbegin','<div class="notice">このブラウザでは記録を保存できません。ページを閉じると学習記録が消える場合があります。</div>');updateProgress();window.scrollTo(0,0);
   if(page==='scope'&&id){const targets={capacitor:'scope-capacitor',magnetic:'scope-magnetic',problems:'assigned-problems',exclusions:'scope-exclusions'};const target=targets[id]&&$('#'+targets[id]);if(target){target.setAttribute('tabindex','-1');target.scrollIntoView({block:'start'});target.focus({preventScroll:true});}}
+  window.StudyUsage?.pageView(page,id);
  }
  document.addEventListener('click',e=>{if(e.target.closest('[data-nav]')&&$('.sidebar').classList.contains('is-menu-open')){setMobileMenu(false);$('#main').focus();}if(e.target.closest('.skip')){e.preventDefault();$('#main').focus();$('#main').scrollIntoView();return;}const el=e.target.closest('button,[data-resource]');if(!el)return;const d=el.dataset;
   if(el.id==='mobile-menu-toggle')setMobileMenu(el.getAttribute('aria-expanded')!=='true');
@@ -238,3 +243,4 @@
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('.sidebar').classList.contains('is-menu-open')&&!$('#resource-dialog').open){e.preventDefault();setMobileMenu(false,true);}});
  window.addEventListener('hashchange',route);route();
 })();
+
